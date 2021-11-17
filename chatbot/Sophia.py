@@ -75,11 +75,11 @@ while True:
                 playsound.playsound("G:\VSCODE_SCRIPTS\chatbot\\audio_files\\astra humming.mp3")
         
             elif response == 'random song':
-                path="G:\Satish\Music_for_Sophia"
+                path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
                 files=os.listdir(path)
                 d=choice(files)
                 speak("Playing "+d)
-                os.startfile("G:\Satish\Music_for_Sophia\\"+d)
+                os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\"+d)
 
             else:
                 speak(response)
@@ -121,17 +121,17 @@ while True:
         elif "song" in text.split():
             if "favourite" not in text:    
                 try:
-                    path="G:\Satish\Music_for_Sophia"
+                    path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
                     files=os.listdir(path)
                     d=choice(files)
-                    os.startfile("G:\Satish\Music_for_Sophia\\"+d)
+                    os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\"+d)
                     speak("Playing "+d)
                 except:
                     speak("No songs for you now")
             else:
                 try:
                     speak("This is my favourite song, smiley")
-                    os.startfile("G:\Satish\Music_for_Sophia\\alvaro_sofia.mp3")
+                    os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\alvaro_sofia.mp3")
                 except:
                     speak("Not in the mood")
         
