@@ -1,0 +1,18 @@
+chatbot questions and responses
+
+BOOTING UP
+1.its wake up time
+2.booting systems up
+3.did the sun rise already?
+4.systems turning on
+5.rise and shine
+6.i have awoken
+
+INTRO
+1.hi i am ____ your personal assistant. how can i help you?
+2.my name is ____ your personal assistant. how can i help you?
+3.hi my name is ____ and i am your personal assistant. how can i be of any help?
+4.its your one and only saviour ____ . how shall i be of assistance
+5.___ your favourite personal assistant is back!!..... anyways how can i help you?
+6. (talking to someone else) ____ i see that you have learnt how to finally listen with your ears now! OOPS i'm sorry ... i am ____ your personal assistant . how can i help you?
+
