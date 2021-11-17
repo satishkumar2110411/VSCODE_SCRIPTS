@@ -2,7 +2,7 @@
 import os
 import datetime
 import time
-impor playsound
+import playsound
 import speech_recognition as sr
 from gtts import gTTS
 from random import choice,random
