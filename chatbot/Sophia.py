@@ -33,59 +33,77 @@ def get_audio():
 
 #BOOTING UP SOPHIA
 
-#FINDING HOUR AS GLOBAL VARIABLE
+#GLOBAL VARIABLES
 hour = datetime.datetime.now().hour
+tolerance = 90
 
 #QUESTION RESPONSE SESSION
 i = 0
+
 while True:
-    while i == 0:
+    while i == 0: #initialising sequence
         intro = get_audio().lower().split()
         if "sophia wake up" in intro or "up" in intro or "turn on" in intro or "wake up" in intro:
             i = 1
             intro_phrase = choice(initialise)+choice(introduction)
             speak(intro_phrase)
-
-
+    
+    print('Listening....')
     Text = get_audio() #RECIEVING MICROPHONE INPUT
     print('Recieved Input: '+ Text)
     text = Text.lower()
+    self_talk_percent = (100-tolerance)/100
 
-    if 'sophia' in text or 'sofia' in text:
-    
-        if text == '':   # NO RESPONSE
-            response = choice(idle)
-            print(response)
+    if text == '' and random() < self_talk_percent :   # NO RESPONSE
+        response = choice(idle)
+        print(response)
         
-            if response == 'shutdown':
-                statement = choice(end)
-                if hour<21:
-                    speak(statement+" Have a great day ahead!")
-                else:
-                    speak(statement+" Good night")
-                break
-        
-            elif response == '':
-                pass
-        
-            elif response == 'cricket noises':
-                playsound.playsound("G:\VSCODE_SCRIPTS\chatbot\\audio_files\crickets.mp3")
-        
-            elif response == "humming sounds":
-                playsound.playsound("G:\VSCODE_SCRIPTS\chatbot\\audio_files\\astra humming.mp3")
-        
-            elif response == 'random song':
-                path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
-                files=os.listdir(path)
-                d=choice(files)
-                speak("Playing "+d)
-                os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\"+d)
-
+        if response == 'shutdown':
+            statement = choice(end)
+            if hour<21:
+                speak(statement+" Have a great day ahead!")
             else:
-                speak(response)
-            
-            continue
+                speak(statement+" Good night")
+            break
+        
+        elif response == '':
+            pass
+        
+        elif response == 'cricket noises':
+            playsound.playsound("G:\VSCODE_SCRIPTS\chatbot\\audio_files\crickets.mp3")
+        
+        elif response == "humming sounds":
+            playsound.playsound("G:\VSCODE_SCRIPTS\chatbot\\audio_files\\astra humming.mp3")
+        
+        elif response == 'random song':
+            path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
+            files=os.listdir(path)
+            d=choice(files)
+            speak("I'm getting bored. Playing "+d)
+            os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\"+d)
+
+        else:
+            speak(response)
     
+    if 'sophia' in text or 'sofia' in text: #recognizing sophia in audio for subsequent response
+        
+        if 'set tolerance' in text:
+            
+            new_tolerance = text.split()[-1]
+            if new_tolerance == 'zero':
+                tolerance = 0
+                speak(str(tolerance))
+            
+            else:
+                tolerance = float(new_tolerance)
+                if tolerance > 100:
+                    tolerance = tolerance%100
+                speak(str(tolerance))
+            
+        elif 'do you like' in text:
+            response = choice(do_you_like)
+            speak(response)
+
         elif 'repeat' in text:
             speak('Okay, I am listening.... please speak in 3 seconds')
             response = get_audio()
@@ -103,10 +121,6 @@ while True:
     
         elif 'how do you work' in text or 'function' in text or 'work' in text.split():
             speak(work_how)
-
-        elif 'do you like' in text:
-            response = choice(do_you_like)
-            speak(response)
 
         elif 'flip' in text.split() or 'coin' in text.split():
             speak("It's a "+coin)
@@ -135,7 +149,7 @@ while True:
                 except:
                     speak("Not in the mood")
         
-        elif "bye" in text or "bhai" in text or "by" in text.split(): # SHUTDOWN SYSTEM
+        elif "bye" in text or "bhai" in text or "by" in text.split() or 'good night' in text: # SHUTDOWN SYSTEM
             statement = choice(end)
         
             if hour<21:
@@ -153,8 +167,7 @@ while True:
             continue
 
     else:
-        prob = random()
-        if prob > 0.01:
+        if random() > 0.01:
             pass
         else:
             if bool(text) != 0:

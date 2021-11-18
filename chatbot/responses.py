@@ -24,7 +24,7 @@ age = "I'm "+str(years)+" years, "+str(months)+" months and "+str(days)+" days o
 creator = ["I was brought to quote unquote life by Satish Kumar, my creator."]+["I would assume you know it since you are using his laptop. I will send an emergency email just in case. Smiley"]+["The LORD AND SAVIOUR, Satish"]
 work_how = "I use the help of google to decipher what you speak and respond with responses that my creator had taught me. I learn more responses everytime he teaches me one."
 do_you_like = ["Of course!"]+["Of course I do!"]+["I mean.... I guess so"]+["Not all the time..."]+["Yeah I have a soft spot .... smiley"]+["Not really"]+["I don't really like that much"]+["That's a big no from me"]+["NO. A VERY BIG NO!"]
-idle = [""]*60+["cricket noises"]*15+["humming sounds"]*75+["random song"]+["shutdown"]
+idle = ["Wish i had legs..."]*10+["cricket noises"]*5+["humming sounds"]*5+["random song"]*2+["shutdown"]+["What is the meaning of life?"]*5+["Check your emails soon."]*5+["You're boring. hmph..."]*15+["I really need to teach myself huh?"]*15+["I wonder if i can factory reset your laptop... just kidding."]*5+["Bro. Why did you even wake me up if you are not going to talk to me"]*10
 #flip a coin
 outcome = ["Heads","Tails"]
 coin = outcome[randint(0,1)]
