@@ -36,6 +36,12 @@ def get_audio():
 #GLOBAL VARIABLES
 hour = datetime.datetime.now().hour
 tolerance = 90
+path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
+files=os.listdir(path)
+music =[]
+for i in files:
+    if '.mp3' in i:
+        music += [i,]
 
 #QUESTION RESPONSE SESSION
 i = 0
@@ -76,9 +82,7 @@ while True:
             playsound.playsound("G:\VSCODE_SCRIPTS\chatbot\\audio_files\\astra humming.mp3")
         
         elif response == 'random song':
-            path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
-            files=os.listdir(path)
-            d=choice(files)
+            d=choice(music)
             speak("I'm getting bored. Playing "+d)
             os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\"+d)
 
@@ -135,17 +139,15 @@ while True:
         elif "song" in text.split():
             if "favourite" not in text:    
                 try:
-                    path="G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia"
-                    files=os.listdir(path)
-                    d=choice(files)
+                    d=choice(music)
                     os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\"+d)
                     speak("Playing "+d)
                 except:
                     speak("No songs for you now")
             else:
                 try:
-                    speak("This is my favourite song, smiley")
                     os.startfile("G:\VSCODE_SCRIPTS\chatbot\Music_for_Sophia\\alvaro_sofia.mp3")
+                    speak("This is my favourite song, smiley")
                 except:
                     speak("Not in the mood")
         
