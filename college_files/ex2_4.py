@@ -1,24 +1,24 @@
 print("Program to calculate the net salary of an employee")
 
-def net_salary():
-    basic_salary = float(input('Enter the basic salary: '))
+def net_salary(B_salary,DA,HRA,pf,tax_percent,MI):
+    gross_salary = B_salary + DA + HRA
+    tax = (tax_percent*B_salary)/100 
 
-    #allowances
-    dearness_allowance = float(input('Enter the dearness allowness: '))
-    home_rental_allowance = float(input('Enter the home rental allowness: '))
-
-    gross_salary = basic_salary + dearness_allowance + home_rental_allowance
-
-    #deductions
-    pf = float(input("Enter PF: "))
-    tax_percent = float(input('Enter tax percentage: '))
-    tax = (tax_percent*basic_salary)/100 
-    medical_instruments = float(input('Enter medical instrument deduction: '))
-
-    total_deductions = pf + tax + medical_instruments
+    total_deductions = pf + tax + MI
 
     net_pay = gross_salary - total_deductions
     return(net_pay)
 
 if __name__ == '__main__':
-    print("Your net salary is Rs.",net_salary())
+    B_salary = float(input('Enter the basic salary: '))
+
+    #allowances
+    DA = float(input('Enter the dearness allowness: ')) #Dearness allowance
+    HRA = float(input('Enter the home rental allowness: ')) #Home rental allowance
+    
+    #deductions
+    pf = float(input("Enter PF: "))
+    tax_percent = float(input('Enter tax percentage: '))
+    MI = float(input('Enter medical instrument deduction: ')) #Medical instruments
+
+    print("Your net salary is Rs.",net_salary(B_salary,DA,HRA,pf,tax_percent,MI))
