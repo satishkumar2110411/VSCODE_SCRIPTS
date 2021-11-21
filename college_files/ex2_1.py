@@ -13,7 +13,7 @@ def triangle(base,height):
     area = 0.5*length*breadth
     return area
 
-if __main__ == '__name__':
+if __name__ == '__main__':
     print("Circle")
     radius = float(input("Enter circle radius: "))
     print(f'Area of circle = {circle(radius)}')

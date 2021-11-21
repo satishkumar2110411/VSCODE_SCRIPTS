@@ -21,4 +21,5 @@ if __name__ == '__main__':
     tax_percent = float(input('Enter tax percentage: '))
     MI = float(input('Enter medical instrument deduction: ')) #Medical instruments
 
-    print("Your net salary is Rs.",net_salary(B_salary,DA,HRA,pf,tax_percent,MI))
+    print(f"Your net salary is Rs.\
+    {net_salary(B_salary,DA,HRA,pf,tax_percent,MI)}")
