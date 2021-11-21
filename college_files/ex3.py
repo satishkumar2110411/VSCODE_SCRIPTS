@@ -1,13 +1,13 @@
 def leap_year(year):
     if year%100==0:
         if year%400 == 0:
-            return(f'{year} is a leap year')
+            return(True)
         else:
-            return(f'{year} is not a leap year')
+            return(False)
     elif year%4==0:
-        return(f'{year} is a leap year')
+        return(True)
     else:
-        return(f'{year} is not a leap year')
+        return(False)
 
 def max_2(a,b):
     if a>b:
@@ -33,7 +33,11 @@ def simple_calculator(a,op,b):
     elif op == '*':
         return a*b
     elif op == '/':
-        return a//b
+        if b !=0.0:
+            return a//b
+        else:
+            return('Cannot divide by 0')
+        
     elif op == '**':
         return a**b
 
@@ -62,7 +66,11 @@ while i == 0:
     
     if p_type == 1:
         year = int(input('Enter the year: '))
-        print(leap_year(year))
+        result = leap_year(year)
+        if result == False:
+            print(f'{year} is not a leap year')
+        else:
+            print(f'{year} is a leap year')
 
     elif p_type == 2:
         x = float(input('Enter the first number: '))
