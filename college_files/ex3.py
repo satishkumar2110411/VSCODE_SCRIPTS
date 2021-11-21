@@ -57,45 +57,49 @@ def grade(t_marks):
     else:
         return 'F'
 
-print('This program contains solutions to finding \n 1. Leap Years \n 2. max of 2 no.s \
-    \n 3. max of 3 no.s \n 4. simple calculator \n 5.grade of the total mark')
 
-i = 0
-while i == 0:
-    p_type = int(input('Enter the program you want to use: '))
+def program():
+    i = 0
+    while i == 0:
+        p_type = int(input('Enter the program you want to use: '))
     
-    if p_type == 1:
-        year = int(input('Enter the year: '))
-        result = leap_year(year)
-        if result == False:
-            print(f'{year} is not a leap year')
+        if p_type == 1:
+            year = int(input('Enter the year: '))
+            result = leap_year(year)
+            if result == False:
+                print(f'{year} is not a leap year')
+            else:
+                print(f'{year} is a leap year')
+
+        elif p_type == 2:
+            x = float(input('Enter the first number: '))
+            y = float(input('Enter the second number: '))
+            print(f'Result: {max_2(x,y)}')
+    
+        elif p_type == 3:
+            x = float(input('Enter the first number: '))
+            y = float(input('Enter the second number: '))
+            z = float(input('Enter the third number: '))
+            print(f'Result: {max_3(x,y,z)}')
+    
+        elif p_type == 4:
+            x = float(input('Enter the first number: '))
+            y = float(input('Enter the second number: '))
+            op = input('Enter your operation(+,-,*,/,**): ')
+            print(f'Result: {simple_calculator(x,op,y)}')
+    
+        elif p_type == 5:
+            marks = float(input('Enter your total marks: '))
+            print(f'Your Grade: {grade(marks)}')
+    
         else:
-            print(f'{year} is a leap year')
+            print('Type in a valid number')
+    
+        status = input('Do you want to continue? (y/n): ')
+        if status != 'y':
+            i = 1
 
-    elif p_type == 2:
-        x = float(input('Enter the first number: '))
-        y = float(input('Enter the second number: '))
-        print(f'Result: {max_2(x,y)}')
-    
-    elif p_type == 3:
-        x = float(input('Enter the first number: '))
-        y = float(input('Enter the second number: '))
-        z = float(input('Enter the third number: '))
-        print(f'Result: {max_3(x,y,z)}')
-    
-    elif p_type == 4:
-        x = float(input('Enter the first number: '))
-        y = float(input('Enter the second number: '))
-        op = input('Enter your operation(+,-,*,/,**): ')
-        print(f'Result: {simple_calculator(x,op,y)}')
-    
-    elif p_type == 5:
-        marks = float(input('Enter your total marks: '))
-        print(f'Your Grade: {grade(marks)}')
-    
-    else:
-        print('Type in a valid number')
-    
-    status = input('Do you want to continue? (y/n): ')
-    if status != 'y':
-        i = 1
+if __name__ =='__main__':
+    print('This program contains solutions to finding \n 1. Leap Years \n 2. max of 2 no.s \
+    \n 3. max of 3 no.s \n 4. simple calculator \n 5.grade of the total mark')
+    program()

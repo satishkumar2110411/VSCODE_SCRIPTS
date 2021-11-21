@@ -7,7 +7,7 @@ def test_leap_year():
 def test_max_2():
     assert(max_2(1.0,2.0)==2.0)
     assert(max_2(-0.4,0.4)==0.4)
-    assert(max_2(10.0,10.0)==10.0)
+    assert(max_2(10.0,10.0)=='Both are Equal')
 
 def test_max_3():
     assert(max_3(1.0,2.0,3.0)==3.0)
