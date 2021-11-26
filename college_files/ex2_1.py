@@ -8,9 +8,9 @@ def square(side):
     return area
 def rectangle(length,breadth):
     area = length*breadth
-    return area
+    return area 
 def triangle(base,height):
-    area = 0.5*length*breadth
+    area = 0.5*base*height
     return area
 
 if __name__ == '__main__':
