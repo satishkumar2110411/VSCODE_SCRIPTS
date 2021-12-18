@@ -68,7 +68,7 @@ def Booking():
     
     
     #WELCOME
-    print('WELCOME TO HOTEL PROMETHEUS. PLEASE FOLLOW THE INSTRUCTIONS AND FILL IN THE REQUIRED DETAILS.')
+    print('WELCOME TO HOTEL GHAGHRABHAGRA. PLEASE FOLLOW THE INSTRUCTIONS AND FILL IN THE REQUIRED DETAILS.')
     
     #PLAN DECISION
     Plans()
@@ -115,7 +115,7 @@ def Booking():
 
 def Menu_display():
             print("-------------------------------------------------------------------------") 
-            print("                           Hotel PROMETHEUS") 
+            print("                           Hotel GHAGHRABHAGRA") 
             print("-------------------------------------------------------------------------") 
             print("                            Menu Card") 
             print("-------------------------------------------------------------------------")  
@@ -254,7 +254,7 @@ def Feedback():
     
 #MAIN PROGRAM
 Room_initiation()
-print('---------HOTEL PROMETHEUS---------')
+print('---------HOTEL GHAGHRABHAGRA---------')
 print('Please select the action you would like to perform: ')
 print('1. Booking\n2. Room service\n3. Cab service\n4.Check out\n5. Feedback')
 ans = int(input('--> '))
